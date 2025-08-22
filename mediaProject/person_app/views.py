@@ -23,10 +23,10 @@ def show_persons(request):
 
 def update_person(request, pk=None):
     template_name = 'person_app/person_form.html'
-    object = Person.objects.get(pk=pk)
-    form = PersonForm(instance=object)
+    person = Person.objects.get(pk=pk)
+    form = PersonForm(instance=person)
     if request.method == 'POST':
-        form = PersonForm(request.POST, request.FILES, instance=object)
+        form = PersonForm(request.POST, request.FILES, instance=person)
         if form.is_valid():
             form.save()
             return redirect('/v1/person-list/')
