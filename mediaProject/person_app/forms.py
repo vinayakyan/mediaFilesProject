@@ -6,7 +6,7 @@ class PersonForm(forms.ModelForm):
 
     class Meta:
         model = Person
-        fields = '__all__'
+        fields = ['first_name','last_name','address','city','gender','profile_picture']
         widgets = {
             'first_name': forms.TextInput(attrs={'class': 'form-control'}),
             'last_name': forms.TextInput(attrs={'class': 'form-control'}),
