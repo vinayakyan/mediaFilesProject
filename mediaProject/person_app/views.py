@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from .forms import PersonForm
 from .models import Person
 
-
+print("heelo")
 def add_person(request):
     template_name = 'person_app/person_form.html'
     form = PersonForm()
